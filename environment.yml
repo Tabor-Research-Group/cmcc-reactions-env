@@ -8,10 +8,10 @@ dependencies:
   - "python=3.10"
   - "matplotlib"
   - "ipykernel"
-  - "pytorch-cuda"
   - "pybind11"
   - "pip"
   - pip:
+    - "torch"
     - "ase"
     - "rdkit"
     - "mccoygroup-mcutils"
