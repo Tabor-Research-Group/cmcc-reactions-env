@@ -1,9 +1,9 @@
 FROM continuumio/miniconda3
 #directory to application, where all files should be copied
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get -y install gcc g++ && \
+    apt-get -y install git gcc g++ && \
     rm -rf /var/lib/apt/lists/*
 
 # copy gcc to g++ as a terrible hack
@@ -15,21 +15,9 @@ RUN apt-get update && \
 COPY environment.yml .
 RUN conda env create -f environment.yml
 
-#running conda env
-# make sure environment.yml replaced with env name
-#RUN conda init
-# RUN conda activate cmcc-rxn
+RUN git clone https://github.com/Center-for-Mechanical-Control-of-Chem/cmcc-reactions
 
-# we shouldn't need the rest of this?
-#install package
-# RUN conda pip install rdkit ase chytorch-rxnmap
-
-#not necessary right now
-#copy application code to a new directory//create new directory
-#COPY ./app .
-
-#set working directory
-#WORKDIR /app
+ENV PYTHONPATH=cmcc-reactions
 
 #running application
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "cmcc-rxn"]
