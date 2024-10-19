@@ -8,7 +8,6 @@ dependencies:
   - "python=3.10"
   - "matplotlib"
   - "ipykernel"
-  - "pytorch"
   - "pytorch-cuda"
   - "pybind11"
   - "pip"
