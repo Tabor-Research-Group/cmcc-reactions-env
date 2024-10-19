@@ -15,4 +15,3 @@ dependencies:
     - "ase"
     - "rdkit"
     - "mccoygroup-mcutils"
-    - "git+https://github.com/isayevlab/AIMNet2"
