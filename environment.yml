@@ -10,6 +10,7 @@ dependencies:
   - "ipykernel"
   - "pytorch"
   - "pytorch-cuda"
+  - "pybind11"
   - "pip"
   - pip:
     - "ase"
